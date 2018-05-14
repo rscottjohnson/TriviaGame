@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Trivia Game</title>
+
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Bungee+Outline|Carter+One|Press+Start+2P|Special+Elite"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- Grid container -->
+  <div class="container">
+
+    <!-- Row 1 - Header row -->
+    <div class="row">
+      <div class="col-sm-12 col-md-12 head">
+        <h1>Trivia Game!</h1>
+        <h2>1980's Major League Baseball Edition</h2>
+      </div>
+    </div>
+    <hr>
+
+    <!-- Row 2 - Game intro row -->
+    <div class="row">
+      <div class="col-sm-12 col-md-12 intro">
+        <h4>The 1980's are often considered a lost decade for Major League Baseball, but your challenge is to FIND some key
+          facts from that era and answer the following quesions before the timer runs out...</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 timeRemaining">
+        <h2 id="timeRemaining">Time Remaining:</h2>
+        <h2 id="timer"></h2>
+      </div>
+    </div>
+    <hr>
+
+    <!-- Question Rows -->
+    <div class="row">
+      <div class="col-sm-12 col-md-12 question">
+        <p>Considered the strongest of the decade, this team won the 1986 World Series:</p>
+        <!-- New York Mets -->
+        <div class="form-check">
+          <input name="102" type="radio" class="with-gap" id="radio10" checked>
+          <label for="radio10">Boston Red Sox</label>
+        </div>
+
+        <div class="form-check">
+          <input name="102" type="radio" class="with-gap" id="radio11">
+          <label for="radio11">Los Angeles Dodgers</label>
+        </div>
+
+        <div class="form-check">
+          <input name="102" type="radio" class="with-gap" id="radio12">
+          <label for="radio12">New York Mets</label>
+        </div>
+
+        <div class="form-check">
+          <input name="102" type="radio" class="with-gap" id="radio13">
+          <label for="radio13">Atlanta Braves</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12 question">
+        <p>This team won the most games in the 80s, but didn't win the World Series during the decade:</p>
+        <!-- New York Yankees -->
+        <div class="form-check">
+          <input name="103" type="radio" class="with-gap" id="radio20" checked>
+          <label for="radio20">New York Mets</label>
+        </div>
+
+        <div class="form-check">
+          <input name="103" type="radio" class="with-gap" id="radio21">
+          <label for="radio21">Baltimore Orioles</label>
+        </div>
+
+        <div class="form-check">
+          <input name="103" type="radio" class="with-gap" id="radio22">
+          <label for="radio22">New York Yankees</label>
+        </div>
+
+        <div class="form-check">
+          <input name="103" type="radio" class="with-gap" id="radio23">
+          <label for="radio23">San Diego Padres</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12 question">
+        <p>This third baseman hit the most home runs during the 80s:</p>
+        <!-- Mike Schmidt -->
+        <div class="form-check">
+          <input name="104" type="radio" class="with-gap" id="radio30" checked>
+          <label for="radio30">Mike Schmidt</label>
+        </div>
+
+        <div class="form-check">
+          <input name="104" type="radio" class="with-gap" id="radio31">
+          <label for="radio31">Don Mattingly</label>
+        </div>
+
+        <div class="form-check">
+          <input name="104" type="radio" class="with-gap" id="radio32">
+          <label for="radio32">Fernando Valenzuela</label>
+        </div>
+
+        <div class="form-check">
+          <input name="104" type="radio" class="with-gap" id="radio33">
+          <label for="radio33">Dale Murphy</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12 question">
+        <p>How many times did players hit 40 or more home runs during the 80s?:</p>
+        <!-- 13 -->
+        <div class="form-check">
+          <input name="105" type="radio" class="with-gap" id="radio40" checked>
+          <label for="radio40">35</label>
+        </div>
+
+        <div class="form-check">
+          <input name="105" type="radio" class="with-gap" id="radio41">
+          <label for="radio41">22</label>
+        </div>
+
+        <div class="form-check">
+          <input name="105" type="radio" class="with-gap" id="radio42">
+          <label for="radio42">13</label>
+        </div>
+
+        <div class="form-check">
+          <input name="105" type="radio" class="with-gap" id="radio43">
+          <label for="radio43">7</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12 question">
+        <p>This team won the most World Series titles during the 80s:</p>
+        <!-- Los Angeles Dodgers -->
+        <div class="form-check">
+          <input name="106" type="radio" class="with-gap" id="radio50" checked>
+          <label for="radio50">Boston Red Sox</label>
+        </div>
+
+        <div class="form-check">
+          <input name="106" type="radio" class="with-gap" id="radio51">
+          <label for="radio51">Los Angeles Dodgers</label>
+        </div>
+
+        <div class="form-check">
+          <input name="106" type="radio" class="with-gap" id="radio52">
+          <label for="radio52">New York Mets</label>
+        </div>
+
+        <div class="form-check">
+          <input name="106" type="radio" class="with-gap" id="radio53">
+          <label for="radio53">Atlanta Braves</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12 question">
+        <p>This team lost the most games of any major league franchise during the 80s:</p>
+        <!-- Seattle Mariners -->
+        <div class="form-check">
+          <input name="107" type="radio" class="with-gap" id="radio60" checked>
+          <label for="radio60">Oakland Athletics</label>
+        </div>
+
+        <div class="form-check">
+          <input name="107" type="radio" class="with-gap" id="radio61">
+          <label for="radio61">Chicago Cubs</label>
+        </div>
+
+        <div class="form-check">
+          <input name="107" type="radio" class="with-gap" id="radio62">
+          <label for="radio62">San Francisco Giants</label>
+        </div>
+
+        <div class="form-check">
+          <input name="107" type="radio" class="with-gap" id="radio63">
+          <label for="radio63">Seattle Mariners</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12 question">
+        <p>In what year was the World Series postponed due to an earthquake in the San Francisco bay area?:</p>
+        <!-- 1989 -->
+        <div class="form-check">
+          <input name="108" type="radio" class="with-gap" id="radio70" checked>
+          <label for="radio70">Boston Red Sox</label>
+        </div>
+
+        <div class="form-check">
+          <input name="108" type="radio" class="with-gap" id="radio71">
+          <label for="radio71">Los Angeles Dodgers</label>
+        </div>
+
+        <div class="form-check">
+          <input name="108" type="radio" class="with-gap" id="radio72">
+          <label for="radio72">New York Mets</label>
+        </div>
+
+        <div class="form-check">
+          <input name="108" type="radio" class="with-gap" id="radio73">
+          <label for="radio73">Atlanta Braves</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12 question">
+        <p>In 1982, Rickey Henderson set the single season stolen base record by successfully swiping how many bases?:</p>
+        <!-- 130 -->
+        <div class="form-check">
+          <input name="109" type="radio" class="with-gap" id="radio80" checked>
+          <label for="radio80">130</label>
+        </div>
+
+        <div class="form-check">
+          <input name="109" type="radio" class="with-gap" id="radio81">
+          <label for="radio81">118</label>
+        </div>
+
+        <div class="form-check">
+          <input name="109" type="radio" class="with-gap" id="radio82">
+          <label for="radio82">95</label>
+        </div>
+
+        <div class="form-check">
+          <input name="109" type="radio" class="with-gap" id="radio83">
+          <label for="radio83">82</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12 question">
+        <p>In 1987, the Minnesota Twins defeated St. Louis Cardinals in the first World Series played in a:</p>
+        <!-- Dome -->
+        <div class="form-check">
+          <input name="110" type="radio" class="with-gap" id="radio90" checked>
+          <label for="radio90">Barnyard</label>
+        </div>
+
+        <div class="form-check">
+          <input name="110" type="radio" class="with-gap" id="radio91">
+          <label for="radio91">Shopping Mall</label>
+        </div>
+
+        <div class="form-check">
+          <input name="110" type="radio" class="with-gap" id="radio92">
+          <label for="radio92">Parking Lot</label>
+        </div>
+
+        <div class="form-check">
+          <input name="110" type="radio" class="with-gap" id="radio93">
+          <label for="radio93">Domed Stadium</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12 question">
+        <p>In 1986, a now infamous ground ball was misplayed by this first baseman, leading to a Boston Red Sox loss:</p>
+        <!-- Bill Buckner -->
+        <div class="form-check">
+          <input name="111" type="radio" class="with-gap" id="radio110" checked>
+          <label for="radio110">Bill Buckner</label>
+        </div>
+
+        <div class="form-check">
+          <input name="111" type="radio" class="with-gap" id="radio111">
+          <label for="radio111">Carney Lansford</label>
+        </div>
+
+        <div class="form-check">
+          <input name="111" type="radio" class="with-gap" id="radio112">
+          <label for="radio112">Wade Boggs</label>
+        </div>
+
+        <div class="form-check">
+          <input name="111" type="radio" class="with-gap" id="radio113">
+          <label for="radio113">Ozzie Smith</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <footer class="footer">
+    <div class="container">
+      Copyright &copy; Scott Johnson
+    </div>
+  </footer>
+
+  <!-- Linking to JavaScript files -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</body>
+
+</html>

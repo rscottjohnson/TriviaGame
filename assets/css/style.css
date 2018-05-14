@@ -1,0 +1,78 @@
+/* Font families included for reference:
+ffont-family: 'Bungee Inline', cursive;
+font-family: 'Bungee Outline', cursive;
+font-family: 'Carter One', cursive;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Special Elite', cursive; */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background: #BBDEFB;
+  margin-bottom: 65px;
+}
+
+.head {
+  padding: 40px 0px 0px 10px;
+}
+
+h1 {
+  font-family: 'Bungee Inline', cursive;
+  color: #0D47A1;
+}
+
+h2 {
+  font-family: 'Bungee Inline', cursive;
+  color: #E53935;
+}
+
+#timeRemaining, #timer {
+  float: left;
+  clear: right;
+  margin: 0px 30px 0px 0px; 
+}
+
+h4 {
+  font-family: 'Carter One', cursive;
+  color: #0D47A1;
+}
+
+p {
+  font-family: 'Special Elite', cursive;
+  color: #0D47A1;
+  font-size: 24px;
+  margin-bottom: 0px;
+}
+
+label {
+  font-family: 'Bungee Inline', cursive;
+  color: #E53935;
+  margin: 0px 0px 5px 5px;
+  padding: 0px 0px 0px 0px;
+}
+
+.question {
+  margin: 0px 0px 20px 0px;
+}
+
+hr {
+  border-width: 5px;
+  color: #E53935;
+  margin: 10px 0px 20px 0px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 65px;
+  line-height: 55px;
+  width: 100%;
+  background-color: #0D47A1;
+  color: #E53935;
+  text-align: center;
+  font-size: 12px;
+  border-top: 5px solid #E53935;
+}
