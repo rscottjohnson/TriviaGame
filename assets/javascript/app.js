@@ -1,18 +1,35 @@
-// Need to create a start button to kick the game off
-// Start button may come from work we did on the Slideshow activity
+// THIS CODE RUNS UPON PAGE LOAD
+// ============================================================================== 
+window.onload = function () {
+  // Keep the countdown timer from starting
+  stop();
+  // Set the header statement to the instructions
+  var startHeader1 = "Hit the START button to begin the 1980's Major League Baseball quiz.";
+  var startHeader2 = "Answer the questions before the timer runs out.";
+  var startHeader3 = "Hit the FINISHED button when you're done. GOOD LUCK!";
+  $(".intro").html("<h1>" + startHeader1 + "</h1><br><br><h1>" + startHeader2 + "</h1><br><br><h1>" + startHeader3 + "</h1>");
+  // Hide the timer info, questions, and finished button
+  $("#timeRemaining").hide();
+  $("#timer").hide();
+  $(".questionRow").hide();
+  $("#btnDone").hide();
+};
+// ==============================================================================
 
-// This start button will change the start area from one that contains a welcome note and the button to one that contains the questions and a timer
+// VARIABLES
+// ==============================================================================
 
-
-// A timer needs to be displayed at the top of the page showing the count down of time left to answer all questions
 // Create a variable to hold the beginning timer
-var timerNumber = 120;
+var timerNumber = 100;
 
 // Create a variable that will hold the timer's interval ID when run function is executed.
 var intervalId;
 
 // Start the score at 0.
 var score = 0;
+
+// Create an array to hold the users answer choices
+var answerArray = [];
 
 var questions = [{
     question: "Considered the strongest of the decade, this team won the 1986 World Series:",
@@ -85,7 +102,8 @@ function decrement() {
   $("#timer").html("<h2>" + timerNumber + "</h2>");
   if (timerNumber === 0) {
     stop();
-    alert("Time Up!");
+    alert("Time's Up!");
+    results();
   }
 }
 
@@ -95,6 +113,25 @@ function stop() {
 
 // TEST QUESTION FUNCTIONS
 //
+
+// Start the game when the button is pressed
+$("#btnBegin").click(function () {
+  $("#timeRemaining").show();
+  $("#timer").show();
+  $(".questionRow").show();
+  $("#btnDone").show();
+
+  var introHeader = "Answer the questions below about 1980's Major League Baseball before the timer runs out. Hit the FINISHED button when you're done. GOOD LUCK!";
+  $(".intro").html("<h4>" + introHeader + "</h4>");
+
+  $("#btnBegin").hide();
+
+  // Post the test questions to the user
+  testQuestions();
+  // Start the countdown timer
+  run();
+});
+
 function testQuestions() {
 
   // Post the test questions to the user
@@ -131,14 +168,17 @@ function testQuestions() {
 
 // Get the radio button values and calculate the score when the button is clicked
 $("#btnDone").click(function () {
-  var answerArray = [];
   for (var i = 0; i < questions.length; i++) {
     var ansValue = $("input[name=10" + i + "]:checked").val();
     answerArray.push(ansValue);
   }
   console.log(answerArray);
+  results();
+});
 
-  answerKey = [2, 2, 0, 2, 1, 3, 0, 0, 3, 0];
+function results() {
+
+  var answerKey = [2, 2, 0, 2, 1, 3, 0, 0, 3, 0];
 
   //Calculate the score by comparing the user's answer array to the answer key array
   for (var i = 0; i < answerArray.length; i++) {
@@ -156,32 +196,29 @@ $("#btnDone").click(function () {
   $("#btnDone").hide();
 
   var resultsHeader = "YOUR RESULTS"
-  $(".intro").html("<h1>" + resultsHeader + "</h1>");
+  $(".intro").html("<h1>" + resultsHeader + ":   " + score + "  correct!</h1>");
 
   var resultsText = "";
   var image = $("<img>");
 
   if (score <= 3) {
-    resultsText = "Like Jose's mustache, your results are thin on correct answers..."
+    resultsText = "Like Jose's mustache, your results are thin on correct answers...";
     image.attr("src", "assets/images/JoseCanseco.jpg");
   } else if (score <= 6) {
-    resultsText = "Like Jose's mustache, your results are thin on correct answers..."
-    image.attr("src", "assets/images/JoseCanseco.jpg");
+    resultsText = " Bo knows you can do better than that...";
+    image.attr("src", "assets/images/BoJackson.jpg");
   } else if (score <= 9) {
-    resultsText = "Like Jose's mustache, your results are thin on correct answers..."
-    image.attr("src", "assets/images/JoseCanseco.jpg");
+    resultsText = "Like Cal Ripken's streak of 2,632 consecutive games played, that score is impressive.";
+    image.attr("src", "assets/images/CalRipken.jpg");
   } else {
-    resultsText = "Like Jose's mustache, your results are thin on correct answers..."
-    image.attr("src", "assets/images/JoseCanseco.jpg");
+    resultsText = "Wow, perfect score!  Mike Witt (perfect game in 1984) is impressed with your 80s baseball knowledge...";
+    image.attr("src", "assets/images/MikeWitt.jpg");
   }
 
-$(".resultStatement").html("<p>" + resultsText + "</p>");
-$(".image").append(image);
+  $(".resultStatement").html("<p>" + resultsText + "</p>");
+  $(".image").append(image);
 
-});
+}
 
 // MAIN PROCESS
 // ==============================================================================
-
-run();
-testQuestions();
